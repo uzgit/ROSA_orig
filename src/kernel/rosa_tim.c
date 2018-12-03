@@ -66,3 +66,9 @@ int timerPeriodSet(unsigned int ms)
 	timerRCSet(rc);
 	return rc * prescale / FOSC0;
 }
+
+uint64_t getTickCount(void)
+{
+	//tickCount is a global variable
+	return tickCount;
+}

@@ -69,6 +69,11 @@ void ROSA_tcbCreate(tcb * tcbTask, char tcbName[NAMESIZE], void *tcbFunction, in
 //Install a new task TCB into ROSA
 extern void ROSA_tcbInstall(tcb *task);
 
+//Delay functions
+int16_t ROSA_delay(uint64_t ticks);
+int16_t ROSA_delayUntil(uint64_t* lastWakeTime, uint64_t ticks);
+int16_t ROSA_delayAbsolute(uint64_t ticks);
+
 //Start running the ROSA kernel
 //This start running the created and installed tasks.
 extern void ROSA_start(void);

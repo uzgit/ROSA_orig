@@ -36,6 +36,22 @@
  **********************************************************/
 void scheduler(void)
 {
+	
+	for (int i=0, suspended_list[i]->backOnlineTime==ROSA_getTickCount(),i++)
+	{
+		int j=0;
+		while(ready_list[j]->effective_priority>suspended_list[i]->effective_priority) j++;
+		ready_list[j-1]->nexttcb=suspended_list[i];
+		ready_list[j+1]->previoustcb=suspended_list[i];
+		
+		suspended_list[i]->nexttcb=ready_list[j+1];
+		suspended_list[i]->previoustcb=ready_list[j-1];
+		
+		suspended_list[i-1]->nexttcb=suspended_list[i+1];
+		suspended_list[i+1]->previoustcb=suspended_list[i-1];
+	}
+	
 	//Find the next task to execute
-	EXECTASK = EXECTASK->nexttcb;
+	EXECTASK = ready_list[0];
+	
 }
