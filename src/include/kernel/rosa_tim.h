@@ -27,6 +27,7 @@
 #ifndef _ROSA_TIMER_H_
 #define _ROSA_TIMER_H_
 
+#include <stdint.h>		// for things like uint16_t, uint64_t
 #include <avr32/io.h>
 
 /***********************************************************

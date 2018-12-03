@@ -3,7 +3,6 @@
 #include <stdint.h>
 #include "rosa_def.h"
 
-#define NULL (void*)0
 #define taskHandle node
 
 typedef struct

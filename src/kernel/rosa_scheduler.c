@@ -37,7 +37,7 @@
 void scheduler(void)
 {
 	
-	for (int i=0, suspended_list[i]->backOnlineTime==ROSA_getTickCount(),i++)
+	for (int i=0, suspended_list[i]->back_online_time==ROSA_getTickCount(),i++)
 	{
 		int j=0;
 		while(ready_list[j]->effective_priority>suspended_list[i]->effective_priority) j++;
