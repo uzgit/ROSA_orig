@@ -28,6 +28,7 @@
 #define _scheduler_H_
 
 #include "kernel/rosa_ker.h"
+#include "include/kernel/doubly_linked_list.h"
 /***********************************************************
  * scheduler
  *
@@ -36,6 +37,10 @@
  * 	This scheduler choose the next task to execute by looking
  * 	at the nexttcb of the current running task.
  **********************************************************/
+
+linked_list * ready_list;
+linked_list * suspended_list;
+
 void scheduler(void);
 
 #endif /* _scheduler_H_ */

@@ -39,6 +39,8 @@ extern void timerStart(void);
 extern void timerStop(void);
 extern uint64_t getTickCount(void);
 
+uint64_t tickCount;
+
 //The timer interrupt service routine
 void timerISR(void);
 extern void timerClearInterrupt(void);

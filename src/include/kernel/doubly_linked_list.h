@@ -3,6 +3,9 @@
 #include <stdint.h>
 #include "rosa_def.h"
 
+#ifndef DOUBLY_LINKED_LIST_H
+#define DOUBLY_LINKED_LIST_H
+
 #define taskHandle node
 
 typedef struct
@@ -18,3 +21,5 @@ int16_t insert_after( tcb *, tcb *);
 int16_t remove_tcb( tcb *);
 
 void print_list(linked_list *);
+
+#endif
