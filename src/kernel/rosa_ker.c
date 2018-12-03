@@ -143,3 +143,25 @@ void ROSA_tcbInstall(tcb * tcbTask)
 		tcbTask->nexttcb = TCBLIST;			//Make the list circular
 	}
 }
+
+int16_t ROSA_delay(uint64_t ticks)
+{
+	remove_tcb(EXECTASK);
+	EXECTASK->backOnlineTime=getTickCount()+ticks;
+	insert_by_back_online_time(suspended_list, EXECTASK);
+}
+
+int16_t ROSA_delayUntil(uint64_t* lastWakeTime, uint64_t ticks)
+{
+	remove_tcb(EXECTASK);
+	EXECTASK->backOnlineTime=lastWakeTime+ticks;
+	lastWakeTime=lastWakeTime+ticks;
+	insert_by_back_online_time(suspended_list, EXECTASK);
+}
+
+int16_t ROSA_delayAbsolute(uint64_t ticks)
+{
+	remove_tcb(EXECTASK);
+	EXECTASK->backOnlineTime=ticks;
+	insert_by_back_online_time(suspended_list, EXECTASK);
+}

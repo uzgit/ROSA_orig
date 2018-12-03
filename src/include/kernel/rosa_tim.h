@@ -36,6 +36,7 @@ extern void timerInit(unsigned int);
 extern void timerReset(void);
 extern void timerStart(void);
 extern void timerStop(void);
+extern uint64_t getTickCount(void);
 
 //The timer interrupt service routine
 void timerISR(void);
