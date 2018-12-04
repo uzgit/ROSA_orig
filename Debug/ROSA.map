@@ -72,7 +72,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x28 src/kernel/rosa_task.o
  .debug_ranges  0x00000000       0x20 src/kernel/rosa_task.o
- .debug_str     0x00000000      0x1d2 src/kernel/rosa_task.o
+ .debug_str     0x00000000      0x1f2 src/kernel/rosa_task.o
  .comment       0x00000000       0x31 src/kernel/rosa_task.o
  .data          0x00000000        0x0 src/main.o
  COMMON         0x00000000        0x8 src/main.o
@@ -1053,20 +1053,20 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr32/avr32-gnu-toolchain
  .debug_pubnames
                 0x00000338       0xb2 ../src/drivers/usart.o
 
-.debug_info     0x00000000     0x4993
+.debug_info     0x00000000     0x49d3
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x2d8 src/main.o
  .debug_info    0x000002d8      0x234 src/kernel/rosa_int.o
- .debug_info    0x0000050c       0x6a src/kernel/rosa_int_asm.o
- .debug_info    0x00000576     0x15ce src/kernel/rosa_ker.o
- .debug_info    0x00001b44       0x6a src/kernel/rosa_ker_asm.o
- .debug_info    0x00001bae      0x234 src/kernel/rosa_scheduler.o
- .debug_info    0x00001de2      0xaba src/kernel/rosa_tim.o
- .debug_info    0x0000289c      0x114 ../src/drivers/button.o
- .debug_info    0x000029b0       0x6d ../src/drivers/delay.o
- .debug_info    0x00002a1d      0x531 ../src/drivers/gpio.o
- .debug_info    0x00002f4e       0xfb ../src/drivers/led.o
- .debug_info    0x00003049     0x194a ../src/drivers/usart.o
+ .debug_info    0x0000050c       0x8a src/kernel/rosa_int_asm.o
+ .debug_info    0x00000596     0x15ce src/kernel/rosa_ker.o
+ .debug_info    0x00001b64       0x8a src/kernel/rosa_ker_asm.o
+ .debug_info    0x00001bee      0x234 src/kernel/rosa_scheduler.o
+ .debug_info    0x00001e22      0xaba src/kernel/rosa_tim.o
+ .debug_info    0x000028dc      0x114 ../src/drivers/button.o
+ .debug_info    0x000029f0       0x6d ../src/drivers/delay.o
+ .debug_info    0x00002a5d      0x531 ../src/drivers/gpio.o
+ .debug_info    0x00002f8e       0xfb ../src/drivers/led.o
+ .debug_info    0x00003089     0x194a ../src/drivers/usart.o
 
 .debug_abbrev   0x00000000      0xae5
  *(.debug_abbrev)
@@ -1111,27 +1111,27 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr32/avr32-gnu-toolchain
  .debug_frame   0x0000039c       0x80 ../src/drivers/led.o
  .debug_frame   0x0000041c      0x10c ../src/drivers/usart.o
 
-.debug_str      0x00000000      0xc6d
+.debug_str      0x00000000      0xc8d
  *(.debug_str)
- .debug_str     0x00000000      0x1bb src/main.o
-                                0x1fd (size before relaxing)
- .debug_str     0x000001bb       0x5b src/kernel/rosa_int.o
-                                0x1bd (size before relaxing)
- .debug_str     0x00000216      0x483 src/kernel/rosa_ker.o
-                                0x691 (size before relaxing)
- .debug_str     0x00000699       0x29 src/kernel/rosa_scheduler.o
-                                0x1bb (size before relaxing)
- .debug_str     0x000006c2      0x24e src/kernel/rosa_tim.o
-                                0x32e (size before relaxing)
- .debug_str     0x00000910       0xa7 ../src/drivers/button.o
+ .debug_str     0x00000000      0x1db src/main.o
+                                0x21d (size before relaxing)
+ .debug_str     0x000001db       0x5b src/kernel/rosa_int.o
+                                0x1dd (size before relaxing)
+ .debug_str     0x00000236      0x483 src/kernel/rosa_ker.o
+                                0x6b1 (size before relaxing)
+ .debug_str     0x000006b9       0x29 src/kernel/rosa_scheduler.o
+                                0x1db (size before relaxing)
+ .debug_str     0x000006e2      0x24e src/kernel/rosa_tim.o
+                                0x34e (size before relaxing)
+ .debug_str     0x00000930       0xa7 ../src/drivers/button.o
                                  0xc6 (size before relaxing)
- .debug_str     0x000009b7       0x31 ../src/drivers/delay.o
+ .debug_str     0x000009d7       0x31 ../src/drivers/delay.o
                                  0x74 (size before relaxing)
- .debug_str     0x000009e8      0x16e ../src/drivers/gpio.o
+ .debug_str     0x00000a08      0x16e ../src/drivers/gpio.o
                                 0x1c0 (size before relaxing)
- .debug_str     0x00000b56       0x3c ../src/drivers/led.o
+ .debug_str     0x00000b76       0x3c ../src/drivers/led.o
                                  0x7f (size before relaxing)
- .debug_str     0x00000b92       0xdb ../src/drivers/usart.o
+ .debug_str     0x00000bb2       0xdb ../src/drivers/usart.o
                                 0x6e9 (size before relaxing)
 
 .debug_loc      0x00000000      0x6e3

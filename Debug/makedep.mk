@@ -4,6 +4,8 @@
 
 src\kernel\rosa_task.c
 
+src\kernel\semaphore.c
+
 src\main.c
 
 src\kernel\rosa_int.c
