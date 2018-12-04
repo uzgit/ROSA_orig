@@ -57,8 +57,9 @@ void print_queue(queue * queue_pointer)
 
 	tcb * iterator;
 	int effective_index;
-
-	for(int index = 0; index < queue_pointer->size; index ++)
+	
+	int index;
+	for(index = 0; index < queue_pointer->size; index ++)
 	{
 		effective_index = (queue_pointer->head + index) % CAPACITY;
 		iterator = queue_pointer->tasks[effective_index];

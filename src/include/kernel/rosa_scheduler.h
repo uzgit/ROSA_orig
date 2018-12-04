@@ -29,6 +29,7 @@
 
 #include "kernel/rosa_ker.h"
 #include "include/kernel/doubly_linked_list.h"
+#include "include/kernel/rosa_tim.h"
 /***********************************************************
  * scheduler
  *

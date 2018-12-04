@@ -37,7 +37,7 @@ extern void timerInit(unsigned int);
 extern void timerReset(void);
 extern void timerStart(void);
 extern void timerStop(void);
-extern uint64_t getTickCount(void);
+extern uint64_t ROSA_getTickCount(void);
 
 uint64_t tickCount;
 

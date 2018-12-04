@@ -27,15 +27,15 @@
     <eraseonlaunchrule>1</eraseonlaunchrule>
     <AsfFrameworkConfig>
       <framework-data>
-        <options />
-        <configurations />
-        <files />
-        <documentation help="" />
-        <offline-documentation help="" />
-        <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.34.1" />
-        </dependencies>
-      </framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.22.0" />
+  </dependencies>
+</framework-data>
     </AsfFrameworkConfig>
     <avrtoolinterface>JTAG</avrtoolinterface>
     <com_atmel_avrdbg_tool_avrdragon>
@@ -200,10 +200,10 @@
     <Compile Include="src\include\kernel\rosa_task.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\kernel\doubly_linked_list.h">
+    <Compile Include="src\kernel\doubly_linked_list.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\kernel\queue.h">
+    <Compile Include="src\kernel\queue.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\kernel\rosa_task.c">

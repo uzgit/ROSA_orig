@@ -52,7 +52,10 @@ src/kernel/semaphore.d src/kernel/semaphore.o src/kernel/semaphore.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr32\avr32-gnu-toolchain\bin\../lib/gcc/avr32/4.4.7/../../../../avr32/include/machine/types.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr32\avr32-gnu-toolchain\bin\../lib/gcc/avr32/4.4.7/../../../../avr32/include/sys/features.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr32\avr32-gnu-toolchain\bin\../lib/gcc/avr32/4.4.7/../../../../avr32/include/sys/stdio.h \
- ../src/include/kernel/rosa_ker.h ../src/include/kernel/rosa_def.h
+ ../src/include/kernel/rosa_ker.h ../src/include/kernel/rosa_def.h \
+ ../src/include/kernel/rosa_scheduler.h ../src/include/kernel/rosa_ker.h \
+ ../src/include/kernel/doubly_linked_list.h \
+ ../src/include/kernel/rosa_tim.h
 
 ../src/kernel/semaphore.h:
 
@@ -165,3 +168,11 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr32\avr32-gnu-toolchain\bi
 ../src/include/kernel/rosa_ker.h:
 
 ../src/include/kernel/rosa_def.h:
+
+../src/include/kernel/rosa_scheduler.h:
+
+../src/include/kernel/rosa_ker.h:
+
+../src/include/kernel/doubly_linked_list.h:
+
+../src/include/kernel/rosa_tim.h:

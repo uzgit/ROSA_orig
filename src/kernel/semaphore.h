@@ -7,10 +7,11 @@
 
 typedef struct
 {
-	int flag;
+	int16_t flag;
 	uint8_t ceiling;
 	tcb * current_task;
-	queue * waiting_tasks;	
+	queue * waiting_tasks;
+	uint8_t task_priority;	
 } ROSA_semaphoreHandle_t;
 
 int16_t ROSA_semaphoreCreate(ROSA_semaphoreHandle_t * handle, uint8_t ceiling);

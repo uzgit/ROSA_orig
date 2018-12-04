@@ -39,7 +39,7 @@ void timerISR(void)
 {
 	int sr;
 	volatile avr32_tc_t * tc = &AVR32_TC;
-
+	
 	//Read the timer status register to determine if this is a valid interrupt
 	sr = tc->channel[0].sr;
 	if(sr & AVR32_TC_CPCS_MASK)
@@ -67,7 +67,7 @@ int timerPeriodSet(unsigned int ms)
 	return rc * prescale / FOSC0;
 }
 
-uint64_t getTickCount(void)
+uint64_t ROSA_getTickCount(void)
 {
 	//tickCount is a global variable
 	return tickCount;

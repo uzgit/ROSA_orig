@@ -64,6 +64,7 @@ int16_t insert_after( tcb * position_tcb, tcb * new_tcb )
 	return result;
 }
 
+//change to use effective_priority, not priority
 int16_t insert_by_priority( linked_list * list, tcb * new_tcb )
 {
 	int16_t result = -1;

@@ -2,6 +2,10 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\kernel\doubly_linked_list.c
+
+src\kernel\queue.c
+
 src\kernel\rosa_task.c
 
 src\kernel\semaphore.c
