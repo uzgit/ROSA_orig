@@ -128,9 +128,11 @@ void ROSA_tcbCreate(tcb * tcbTask, char tcbName[NAMESIZE], void *tcbFunction, in
  **********************************************************/
 void ROSA_tcbInstall(tcb * tcbTask)
 {
+	insert_by_priority(ready_list, tcbTask);
+/*
 	tcb * tcbTmp;
 
-	/* Is this the first tcb installed? */
+	// Is this the first tcb installed?
 	if(TCBLIST == NULL) {
 		TCBLIST = tcbTask;
 		TCBLIST->nexttcb = tcbTask;			//Install the first tcb
@@ -144,6 +146,7 @@ void ROSA_tcbInstall(tcb * tcbTask)
 		tcbTmp->nexttcb = tcbTask;			//Install tcb last in the list
 		tcbTask->nexttcb = TCBLIST;			//Make the list circular
 	}
+*/
 }
 
 int16_t ROSA_delay(uint64_t ticks)
