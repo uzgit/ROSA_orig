@@ -104,7 +104,7 @@ int16_t ROSA_semaphoreUnlock(ROSA_semaphoreHandle_t handle)
 			}
 			else
 			{
-				//EXECTASK->effective_priority = EXECTASK->priority;
+				EXECTASK->effective_priority = handle.task_priority;
 				tcb * tmp_tcb;
 				dequeue(handle.waiting_tasks, tmp_tcb);
 				handle.current_task = tmp_tcb;

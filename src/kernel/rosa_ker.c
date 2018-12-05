@@ -67,10 +67,10 @@ void ROSA_init(void)
 {
 	//Do initialization of I/O drivers
 	ledInit();									//LEDs
-	buttonInit();								//Buttons
-	joystickInit();								//Joystick
-	potInit();									//Potentiometer
-	usartInit(USART, &usart_options, FOSC0);	//Serial communication
+	//buttonInit();								//Buttons
+	//joystickInit();								//Joystick
+	//potInit();									//Potentiometer
+	//usartInit(USART, &usart_options, FOSC0);	//Serial communication
 
 	//Start with empty TCBLIST and no EXECTASK.
 	TCBLIST = NULL;
@@ -83,7 +83,11 @@ void ROSA_init(void)
 
 	//Initialize the timer to 100 ms period.
 	//...
-	//timerInit(100);
+	timerInit(1);
+	interruptEnable();
+	TC_CCR &= ~(0x01 << 1);
+	TC_CCR |= (0x01 << 0 | 0x01<< 2);
+	//timerStart();
 	//...
 }
 
@@ -133,8 +137,8 @@ void ROSA_tcbCreate(tcb * tcbTask, char tcbName[NAMESIZE], void *tcbFunction, in
  **********************************************************/
 void ROSA_tcbInstall(tcb * tcbTask)
 {
-	insert_by_priority(ready_list, tcbTask);
-/*
+	//insert_by_priority(TCBLIST, tcbTask);
+
 	tcb * tcbTmp;
 
 	// Is this the first tcb installed?
@@ -151,7 +155,7 @@ void ROSA_tcbInstall(tcb * tcbTask)
 		tcbTmp->nexttcb = tcbTask;			//Install tcb last in the list
 		tcbTask->nexttcb = TCBLIST;			//Make the list circular
 	}
-*/
+
 }
 
 int16_t ROSA_delay(uint64_t ticks)

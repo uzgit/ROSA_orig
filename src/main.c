@@ -38,44 +38,63 @@
 //Include configuration
 #include "rosa_config.h"
 
-//Data blocks for the tasks
-#define T1_STACK_SIZE 0x40
-static int t1_stack[T1_STACK_SIZE];
-static tcb t1_tcb;
+#include "kernel/semaphore.h"
+#include "include/kernel/rosa_task.h"
 
-#define T2_STACK_SIZE 0x40
-static int t2_stack[T2_STACK_SIZE];
-static tcb t2_tcb;
 
-/*************************************************************
- * Task1
- * LED0 lights up
- * LED1 goes dark
- ************************************************************/
-void task1(void)
+ROSA_semaphoreHandle_t S1;
+ROSA_semaphoreHandle_t S2;
+
+ROSA_taskHandle_t A;
+ROSA_taskHandle_t B;
+
+void taskA(void)
 {
-	while(1) {
-		ledOn(LED0_GPIO);
-		ledOff(LED1_GPIO);
-		delay_ms(350);
-		ROSA_yield();
+	while(1)
+	{
+		ledToggle(LED0_GPIO);
+		ledToggle(LED0_GPIO);
+		ledToggle(LED0_GPIO);
+		//ledOn(LED0_GPIO);
+		//ROSA_delay(2000);
+		//ledOff(LED0_GPIO);
 	}
 }
 
-/*************************************************************
- * Task2
- * LED0 goes dark
- * LED1 lights up
- ************************************************************/
-void task2(void)
+void taskB(void)
 {
-	while(1) {
-		ledOff(LED0_GPIO);
+	while(1)
+	{
 		ledOn(LED1_GPIO);
-		delay_ms(150);
-		ROSA_yield();
+		ROSA_delay(5000);
+		ledOff(LED1_GPIO);
 	}
 }
+/*
+void taskA(void)
+{
+	while(1)
+	{
+		ROSA_semaphoreLock(S1);
+		ledOn(LED0_GPIO);
+		ROSA_delay(2000);
+		//ROSA_semaphoreUnlock(S1);
+	}
+}
+
+void taskB(void)
+{
+	while(1)
+	{
+		if(ROSA_semaphoreUnlock(S1)==0)
+		{
+			ledOff(LED0_GPIO);
+			
+		}
+	}
+}
+*/
+
 
 /*************************************************************
  * Main function
@@ -84,15 +103,13 @@ int main(void)
 {
 	//Initialize the ROSA kernel
 	ROSA_init();
-
-	//Create tasks and install them into the ROSA kernel
-	ROSA_tcbCreate(&t1_tcb, "tsk1", task1, t1_stack, T1_STACK_SIZE);
-	ROSA_tcbInstall(&t1_tcb);
-	ROSA_tcbCreate(&t2_tcb, "tsk2", task2, t2_stack, T2_STACK_SIZE);
-	ROSA_tcbInstall(&t2_tcb);
+	
+	ROSA_taskCreate(A, "taskA", taskA, 40, 1);
 
 	//Start the ROSA kernel
 	ROSA_start();
+	
+
 	/* Execution will never return here */
 	while(1);
 }

@@ -59,6 +59,12 @@ extern void ROSA_yield(void);
 //Define the initial value of the satus register
 #define ROSA_INITIALSR 0x1c0000
 
+#define TC_BASE_ADDRESS 0xFFFF3800
+#define TC_CHANNEL_0_OFFSET 0x00
+#define TC_CHANNEL_0_ADRESS TC_BASE_ADDRESS+TC_CHANNEL_0_OFFSET
+#define TC_CCR_OFFSET 0x00                //Chanel Control Register
+#define TC_CCR (*((volatile uint32_t*)(TC_CHANNEL_0_ADRESS + TC_CCR_OFFSET)))
+
 //Timer interrupt service routine
 __attribute__((__interrupt__)) extern void timerISR(void);
 

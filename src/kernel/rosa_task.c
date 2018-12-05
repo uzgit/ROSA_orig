@@ -9,11 +9,14 @@ int16_t ROSA_taskCreate(ROSA_taskHandle_t * th, char * id, void * taskFunc, uint
 	tcb * task;
 	int * stack;
 	
-	if( (task = calloc(1, sizeof(tcb))) && (stack = calloc(DEFAULT_STACK_SIZE, sizeof(int))) )
+	task = malloc(sizeof(tcb));
+	stack = malloc(DEFAULT_STACK_SIZE * sizeof(int));
+	
+	if( (task != NULL) && (stack != NULL) )
 	{
-		th = calloc(1, sizeof(tcb*));
-		task = calloc(1, sizeof(tcb));
-		stack = calloc(stackSize, sizeof(int));
+		th = malloc(sizeof(tcb*));
+		task = malloc(sizeof(tcb));
+		//stack = malloc(sizeof(int));
 		
 		th = & task;
 		
